@@ -10,3 +10,5 @@ browserify -o bundle.js src/app.js &&
 python -m http.server
 ```
 
+# credits:
+http://millionthvector.blogspot.de/2012/12/spaceship-fighter-concepts.html
