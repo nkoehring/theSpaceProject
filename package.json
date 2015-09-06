@@ -22,9 +22,15 @@
   "homepage": "https://github.com/nkoehring/theSpaceProject/issues",
   "devDependencies": {
     "browserify": "^11.0.1",
-    "browserify-shader": "^0.1.0"
+    "browserify-shader": "^0.1.0",
+    "babelify": "^6.3.0",
+    "eslintify": "0.0.3"
   },
   "browserify": {
-    "transform": [ "browserify-shader" ]
+    "transform": [
+      "babelify",
+      "browserify-shader",
+      "eslintify"
+    ]
   }
 }

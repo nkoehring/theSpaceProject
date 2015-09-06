@@ -1,45 +1,31 @@
-require("browserify-shader").extensions = ["frag", "vert", "c"]
+class Game {
 
-function Game() {
-
-  var game, filter
-
-  var WIDTH = 800
-  var HEIGHT = 600
-
-  var fragment = require('./shaders/lightwave.frag')
-
-  function create() {
-    var sprite = game.add.sprite()
-
-    filter = new Phaser.Filter(game, null, fragment())
-    filter.setResolution(WIDTH, HEIGHT)
-
-    sprite.width = WIDTH
-    sprite.height = HEIGHT
-    sprite.filters = [filter]
-  }
-
-
-  function update() {
-    filter.update()
-  }
-
-
-  function Game() {
-
-    game = new Phaser.Game(
-      WIDTH,
-      HEIGHT,
+  constructor(width, height) {
+    this.game = new Phaser.Game(
+      width,
+      height,
       Phaser.AUTO,
-      'lightwave shader example',
-      { create: create, update: update }
-    );
-
-    return game
+      'fancy pancy',
+      { create: this.create, update: this.update }
+    )
   }
 
-  return Game()
+  create() {
+    var fs = require('./shaders/lightwave.frag')()
+
+    this.sprite = this.game.add.sprite()
+    this.filter = new Phaser.Filter(this.game, null, fs)
+    this.filter.setResolution(this.game.width, this.game.height)
+
+    this.sprite.width = this.game.width
+    this.sprite.height = this.game.height
+    this.sprite.filters = [this.filter]
+  }
+
+  update() {
+    this.filter.update()
+  }
+
 }
 
-new Game
+new Game(800, 600)
