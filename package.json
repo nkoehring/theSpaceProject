@@ -1,0 +1,30 @@
+{
+  "name": "theSpaceProject",
+  "version": "0.0.1",
+  "description": "ein Spiel.",
+  "main": "src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nkoehring/theSpaceProject.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "authors": [
+    "Norman Köhring",
+    "Sascha Hartleb"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkoehring/theSpaceProject/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/nkoehring/theSpaceProject/issues",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "browserify-shader": "^0.1.0"
+  },
+  "browserify": {
+    "transform": [ "browserify-shader" ]
+  }
+}
